@@ -19,6 +19,43 @@ const entrepreneurs = [
   { first: 'Peter', last: 'Thiel', year: 1967 }
 ];
 
+console.log("---------------(1)--------------")
+  console.log("les entrepreneurs qui sont nés dans les années 70 :")
+  function ageVerification(element) {
+    if (element.year > 1969) {      
+      if (element.year < 1980) {
+        return "affirmative";} 
+      else {
+        return "better";}  } 
+    else {return "less";}
+  }
 
-console.log("les entrepreneurs qui sont nés dans les années 70 :")
-console.log(entrepreneurs.forEach())
+  var entreprenors_name = [];
+
+  function InsertInList (item){
+    if (ageVerification(item) == "affirmative"){
+        entreprenors_name.push(item.first);}
+  }
+  for (var i = 0; i < entrepreneurs.length; i++) {InsertInList(entrepreneurs[i]);}
+    console.log(`les entrepreneurs qui sont nés dans les années 70 sont: ${entreprenors_name}`)
+
+console.log("---------------(2)--------------")
+  console.log("une array qui contient le prénom et le nom des entrepreneurs")
+    var entreprenors_name = [];
+    for (var i = 0; i < entrepreneurs.length; i++){
+      entreprenors_name.push(entrepreneurs[i].last + " " +entrepreneurs[i].first);
+    }
+    console.log(entreprenors_name)
+
+console.log("---------------(3)--------------")
+  console.log("âge de chaque inventeur aujourd'hui ?")
+    for (var i = 0; i < entrepreneurs.length; i++){
+    console.log(entreprenors_name[i] + " " + "a" + " " + (2019 - entrepreneurs[i].year) + " " + "ans");
+    }
+
+console.log("---------------(4)--------------")
+  console.log("Trillage des entrepreneurs par ordre alphabétique du nom de famille.")
+    entreprenors_name.sort();
+    entreprenors_name.forEach(sort_list => {
+      console.log("-" + " " +sort_list)
+    });

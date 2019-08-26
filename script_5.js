@@ -12,3 +12,72 @@ const books = [
   { title: 'Voyage au centre de la Terre', id: 4656388, rented: 38 },
   { title: 'Guerre et Paix', id: 748147, rented: 19 }
 ];
+
+
+console.log("---------------(1)--------------")
+  console.log("Est-ce que tous les livres ont été au moins empruntés une fois ?")
+    var leasing = [];
+    for (var i = 0; i < books.length; i++){
+      leasing.push(books[i].rented);
+    }
+    leasing.forEach(sort_list => {
+                    function inspection(landlords_number){
+                            if (landlords_number > 0){
+                              return true
+                            }
+                            else{
+                              return false
+                            }
+                    }
+                console.log(inspection(sort_list))
+            })
+
+console.log("---------------(2)--------------")
+  console.log("le livre le plus emprunté est:")
+
+ list = leasing.sort()
+  max_loans_number = list[list.length - 1]
+  for (var i = 0; i < books.length; i++){
+    if (books[i].rented == max_loans_number){
+      console.log('le livre intitulé: "' + books[i].title + '"') 
+    }
+  }
+
+console.log("---------------(3)--------------")
+  console.log("le livre le moins emprunté")
+    min_loans_number = list[0]
+    for (var i = 0; i < books.length; i++){
+      if (books[i].rented == min_loans_number){
+        console.log('le livre intitulé: "' + books[i].title + '"') 
+      }
+    }
+
+console.log("---------------(4)--------------")
+  console.log("le livre avec l'ID: 873495")
+
+    for (var i = 0; i < books.length; i++){
+      if (books[i].id == 873495){
+        console.log('le livre intitulé: "' + books[i].title + '"') 
+      }
+    }
+
+console.log("---------------(5)--------------")
+  console.log("Supprime le livre avec l'ID: 133712")
+
+    for (var i = 0; i < books.length; i++){
+      if (books[i].id == 133712){
+        console.log('on va suprimer le livre intitulé: "'+ books[i].title + '"')
+        books.splice(i, 1);
+      }
+    }
+
+console.log("---------------(6)--------------")
+  console.log("Triage des livres par ordre alphabétique")
+  var books_title = []
+      for (var i = 0; i < books.length; i++){
+        books_title.push(books[i].title)
+      }
+        books_title.sort();
+        books_title.forEach(sort_list => {
+          console.log("-" + " " +sort_list)
+        });
